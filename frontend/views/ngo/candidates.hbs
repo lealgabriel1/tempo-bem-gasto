@@ -1,0 +1,16 @@
+<h1>Candidatos para Oportunidade {{oppId}}</h1>
+<ul>
+  {{#each candidates}}
+    <li>
+      Aplicação #{{this.id}} — Status: {{this.status}}
+      <form action="/ngo/opportunities/{{oppId}}/candidates/{{this.id}}" method="post" style="display:inline">
+        <select name="status">
+          <option value="approved">Aprovar</option>
+          <option value="rejected">Rejeitar</option>
+        </select>
+        <button type="submit">Atualizar</button>
+      </form>
+    </li>
+  {{/each}}
+</ul>
+<a href="/ngo/opportunities">Voltar</a>

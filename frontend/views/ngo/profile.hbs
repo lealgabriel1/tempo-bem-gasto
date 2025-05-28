@@ -1,0 +1,7 @@
+<h1>Perfil ONG</h1>
+{{#if error}}<p style="color:red">{{error}}</p>{{/if}}
+<form action="/ngo/profile" method="post">
+  <input name="name" placeholder="Nome ONG" required />
+  <textarea name="description" placeholder="Descrição"></textarea>
+  <button type="submit">Salvar</button>
+</form>

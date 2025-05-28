@@ -1,0 +1,39 @@
+<div class="container mt-5" style="max-width: 500px;">
+  <h1 class="mb-4 text-center">Login / Cadastro</h1>
+  {{#if error}}<div class="alert alert-danger">{{error}}</div>{{/if}}
+
+  <!-- Form de Login -->
+  <form action="/login" method="post" class="mb-4">
+    <div class="mb-3">
+      <label class="form-label">Usuário</label>
+      <input name="username" class="form-control" placeholder="Digite seu usuário" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Senha</label>
+      <input name="password" type="password" class="form-control" placeholder="Digite sua senha" required />
+    </div>
+    <button class="btn btn-primary w-100" type="submit">Login</button>
+  </form>
+
+  <hr/>
+
+  <!-- Form de Cadastro -->
+  <form action="/signup" method="post">
+    <div class="mb-3">
+      <label class="form-label">Novo usuário</label>
+      <input name="username" class="form-control" placeholder="Escolha um usuário" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Nova senha</label>
+      <input name="password" type="password" class="form-control" placeholder="Escolha uma senha" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Você é:</label>
+      <select name="is_ngo" class="form-select">
+        <option value="false" selected>Voluntário</option>
+        <option value="true">ONG</option>
+      </select>
+    </div>
+    <button class="btn btn-success w-100" type="submit">Cadastrar</button>
+  </form>
+</div>
