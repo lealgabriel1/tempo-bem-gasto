@@ -1,8 +1,0 @@
-<h1>{{opportunity.title}}</h1>
-<p>{{opportunity.description}}</p>
-<p>Local: {{opportunity.location}}</p>
-{{#if error}}<p style="color:red">{{error}}</p>{{/if}}
-<form action="/volunteer/opportunities/{{opportunity.id}}/apply" method="post">
-  <button type="submit">Inscrever-se</button>
-</form>
-<a href="/volunteer/opportunities">Voltar</a>
