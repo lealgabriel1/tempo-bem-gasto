@@ -26,8 +26,19 @@ O **Tempo Bem Gasto** é uma plataforma de rede social que:
 ---
 
 ## 📦 Pré-requisitos  
-- Node.js 18+  
-- Python 3+  
-- MySQL  
-- Docker
+- [Docker](https://docs.docker.com/get-docker/)  
+- [Docker Compose](https://docs.docker.com/compose/)  
+- (Opcional para desenvolvimento manual: Node.js 18+, Python 3+, MySQL)
+
 ---
+
+## 🐳 Rodando com Docker
+
+Com Docker Compose, você sobe **frontend (React + Nginx)**, **backend (FastAPI)** e **MySQL** com um comando só.
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/lealgabriel1/tempo-bem-gasto.git
+cd tempo-bem-gasto
+```
