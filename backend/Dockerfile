@@ -1,12 +1,23 @@
-FROM python:3.11-slim
+# ───────────────────────────────────────────────────────────────────────────────
+#  Etapa 1: Base Python e instalação de dependências
+# ───────────────────────────────────────────────────────────────────────────────
+FROM python:3.10-slim
+
+# Define o diretório de trabalho dentro do container
 WORKDIR /app
 
-# Instala dependências Python
+# Copia somente o requirements.txt e instala as dependências
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copia código da aplicação
-COPY ./app ./app
+# ───────────────────────────────────────────────────────────────────────────────
+#  Etapa 2: Copia o código-fonte do backend
+# ───────────────────────────────────────────────────────────────────────────────
+# Copia tudo da pasta backend/ (exceto o que estiver em .dockerignore)
+COPY . .
 
-# Executa o servidor FastAPI
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Expõe a porta que o Uvicorn usará para atender as requisições
+EXPOSE 8000
+
+# Comando padrão para iniciar o FastAPI no container
+CMD ["uvicorn", "main:api", "--host", "0.0.0.0", "--port", "8000"]
